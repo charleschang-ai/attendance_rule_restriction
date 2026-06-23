@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="attendance_rule_restriction.GeoDetectButton">
+        <button class="btn btn-secondary" t-on-click="onClick">
+            ＋ Add My Current Location
+        </button>
+    </t>
+</templates>

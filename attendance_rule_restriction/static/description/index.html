@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odoo App 3 Index</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<section>
+    <div class="container" style="font-family: 'Inter', sans-serif !important;background-color: #fff !important;">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-between flex-wrap align-items-sm-center"
+                 style="border-bottom:1px solid rgba(0, 0, 0, 0.22)">
+                <div class="my-3 d-flex align-items-center">
+                    <div class="text-center"
+                         style="background-color:#017E84 !important;font-size: 0.8rem !important; color:#fff !important; font-weight:500 !important; padding:4px !important; margin:0 3px !important; border-radius:50px !important; min-width: 120px !important;">
+                        Community
+                    </div>
+                    <div class="text-center"
+                         style="background-color:#875A7B!important; color:#fff !important;font-size: 0.8rem !important; font-weight:500 !important; padding:4px !important; margin:0 3px !important; border-radius:50px !important;min-width: 120px !important;">
+                        Enterprise
+                    </div>
+                </div>
+                <div class="my-3 d-flex align-items-center">
+                    <div class="text-center"
+                         style="background-color:#875A7B!important; color:#fff !important;font-size: 0.8rem !important; font-weight:500 !important; padding:4px !important; margin:0 3px !important; border-radius:50px !important;min-width: 120px !important;">
+                        V19
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 text-center d-flex align-items-center flex-column"
+                 style="margin: 80px 0px !important;">
+
+                <h1 style="font-size: 2.8rem; font-weight: 700; color: #1A202C;">
+                    Attendance Rule Restriction | WiFi · IP · GPS · Time · Device | Multi-Layer Check-in Control for
+                    Odoo
+                </h1>
+
+                <p style="max-width: 80%; font-weight: 400; line-height: 32px; color: #718096; margin: 20px 0;">
+                <h3>Stop buddy punching and remote check-ins for good. This module gives you a powerful,
+                    configurable rule engine that enforces exactly <em>where</em>, <em>when</em>, and <em>how</em>
+                    your employees can clock in and out — all natively inside Odoo, with zero third-party dependencies.
+                </h3>
+                </p>
+
+                <br/>
+                <div style="width: 80%; margin-top: 0.5rem;">
+                    <img src="assets/screenshots/img1.png" class="img-responsive" width="100%" height="auto">
+                </div>
+                <br/>
+
+                <h2 style="background: #0eea83; padding: 8px 16px;">
+                    🔒 Multi-Layer Rule Engine — AND Logic Across All Rules
+                </h2>
+                <h3 style="max-width: 80%; line-height: 32px;">
+                    Configure multiple independent rules. Each rule must pass before a check-in is accepted.
+                    Within each rule, multiple allowed values use OR logic — giving you precise, flexible control
+                    without complexity.
+                </h3>
+                <br/>
+
+                <h2 style="background: #0eea83; padding: 8px 16px;">
+                    🌐 IP Range Rule — Enforce Company Network for Systray Users
+                </h2>
+                <h3 style="max-width: 80%; line-height: 32px;">
+                    For employees using the Odoo Systray attendance button on their own computers,
+                    enforce that they must be on the company network before clocking in or out.
+                    <br/><br/>
+                    ✅ Supports single IP and CIDR notation (e.g. <code>192.168.1.0/24</code>).<br/>
+                    ✅ Configure multiple allowed IP ranges — useful for companies with multiple offices or VPN
+                    subnets.<br/>
+                    ✅ Built-in "Add My Current IP" button — admins can detect and add their own IP in one click.
+                </h3>
+                <br/>
+                <div style="width: 80%; margin-top: 0.5rem;">
+                    <img src="assets/screenshots/img2.png" class="img-responsive" width="100%" height="auto">
+                </div>
+                <br/>
+
+                <h2 style="background: #0eea83; padding: 8px 16px;">
+                    📶 WiFi Rule — Server-Side Detection, No App Required
+                </h2>
+                <h3 style="max-width: 80%; line-height: 32px;">
+                    The WiFi rule is purpose-built for <strong>Kiosk deployments</strong> where Odoo runs on a
+                    dedicated on-site device (e.g. a reception terminal or factory floor kiosk).
+                    <br/><br/>
+                    When an employee checks in at the Kiosk, the server reads the WiFi network
+                    that the <strong>Odoo server device itself</strong> is connected to — matching against your
+                    configured allowed SSIDs and BSSIDs. No mobile app, no browser permissions, no employee action
+                    required.
+                    <br/><br/>
+                    ✅ <strong>SSID matching</strong> — match by WiFi network name.<br/>
+                    ✅ <strong>BSSID matching</strong> — match by router MAC address for pinpoint accuracy.<br/>
+                    ✅ <strong>Multi-entry support</strong> — allow multiple access points (OR logic), perfect for
+                    offices with multiple routers.<br/>
+                    ⚠️ <em>Note: WiFi detection reads the network of the machine running Odoo. This rule is ideal for
+                    fixed on-premise Kiosk setups, not for remote or cloud-hosted deployments.</em>
+                </h3>
+                <br/>
+                <div style="width: 80%; margin-top: 0.5rem;">
+                    <img src="assets/screenshots/img3.png" class="img-responsive" width="100%" height="auto">
+                </div>
+                <br/>
+
+                <h2 style="background: #0eea83; padding: 8px 16px;">
+                    📍 Geolocation Rule — GPS Radius Enforcement
+                </h2>
+                <h3 style="max-width: 80%; line-height: 32px;">
+                    Require employees to be physically within a defined radius of your office before they can check in.
+                    Uses the browser's native GPS — no third-party location service needed.
+                    <br/><br/>
+                    ✅ Define multiple allowed locations — head office, branch, warehouse, and more.<br/>
+                    ✅ Configurable radius per location (recommended: 100–500m).<br/>
+                    ✅ Built-in "Add My Current Location" button for instant coordinate capture.<br/>
+                    ✅ Works with both Kiosk and Systray modes when location tracking is enabled in Odoo settings.
+                </h3>
+
+                <br/>
+                <div style="width: 80%; margin-top: 0.5rem;">
+                    <img src="assets/screenshots/img4.png" class="img-responsive" width="100%" height="auto">
+                </div>
+                <br/>
+
+
+                <h2 style="background: #0eea83; padding: 8px 16px;">
+                    ⏰ Time Range Rule — Separate Windows for Check-in and Check-out
+                </h2>
+                <h3 style="max-width: 80%; line-height: 32px;">
+                    Prevent early check-ins, late check-outs, and after-hours attendance manipulation.
+                    Define separate allowed time windows for check-in and check-out actions, with full weekday control.
+                    <br/><br/>
+                    ✅ Independent time windows for Check-in and Check-out.<br/>
+                    ✅ Per-weekday configuration — different rules for weekdays vs weekends.<br/>
+                    ✅ Multiple time slots per type (OR logic) — support shift workers with ease.<br/>
+                    ✅ Time is evaluated against the company's configured timezone.
+                </h3>
+
+                <br/>
+                <div style="width: 80%; margin-top: 0.5rem;">
+                    <img src="assets/screenshots/img5.png" class="img-responsive" width="100%" height="auto">
+                </div>
+                <br/>
+
+
+                <h2 style="background: #0eea83; padding: 8px 16px;">
+                    💻 Device Rule — Control Which Devices Can Clock In
+                </h2>
+                <h3 style="max-width: 80%; line-height: 32px;">
+                    Restrict attendance to company-approved device types, platforms, or browsers.
+                    Prevent employees from checking in via personal devices or unauthorized browsers.
+                    <br/><br/>
+                    ✅ Filter by device type: Computer or Mobile.<br/>
+                    ✅ Filter by platform: Windows, Android, iPhone, iPad, and more.<br/>
+                    ✅ Filter by browser: Chrome, Firefox, Safari, Edge, and more.<br/>
+                    ✅ Partial and case-insensitive matching — no need for exact strings.
+                </h3>
+
+                <br/>
+                <br/>
+                <div style="width: 80%; margin-top: 0.5rem;">
+                    <img src="assets/screenshots/img6.png" class="img-responsive" width="100%" height="auto">
+                </div>
+                <br/>
+
+                <h2 style="background: #0eea83; padding: 8px 16px;">
+                    ⚙️ Designed for Flexibility and Scalability
+                </h2>
+                <h3 style="max-width: 80%; line-height: 32px;">
+                    - <strong>AND across rules, OR within rules</strong> — intuitive logic that covers real-world
+                    scenarios.<br/>
+                    - <strong>Company-scoped</strong> — each rule belongs to a company, supporting multi-company setups.<br/>
+                    - <strong>Extensible architecture</strong> — new rule types can be added with minimal code
+                    changes.<br/>
+                    - <strong>No JS changes required</strong> for WiFi, IP, Time, and Device rules — purely server-side.<br/>
+                    - <strong>Clear error messages</strong> — employees are told exactly which rule blocked them and
+                    why.
+                </h3>
+
+                <br/>
+
+                <br/>
+                <div style="width: 80%; margin-top: 0.5rem;">
+                    <img src="assets/screenshots/img7.png" class="img-responsive" width="100%" height="auto">
+                </div>
+                <br/>
+                <br/>
+                <div style="width: 80%; margin-top: 0.5rem;">
+                    <img src="assets/screenshots/img8.png" class="img-responsive" width="100%" height="auto">
+                </div>
+                <br/>
+                <br/>
+                <div style="width: 80%; margin-top: 0.5rem;">
+                    <img src="assets/screenshots/img9.png" class="img-responsive" width="100%" height="auto">
+                </div>
+                <br/>
+
+                <p style="max-width: 80%; font-weight: 400; line-height: 32px; color: #718096;">
+                    For support or customization inquiries, please contact us at
+                    <a href="mailto:18438630181@163.com">18438630181@163.com</a>
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

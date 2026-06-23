@@ -1,0 +1,168 @@
+<odoo>
+    <record id="attendance_rule_tree" model="ir.ui.view">
+        <field name="name">attendance.rule.tree</field>
+        <field name="model">attendance.rule</field>
+        <field name="arch" type="xml">
+            <list string="Attendance Rules">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="rule_type"/>
+                <field name="active" widget="boolean_toggle"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="attendance_rule_form" model="ir.ui.view">
+        <field name="name">attendance.rule.form</field>
+        <field name="model">attendance.rule</field>
+        <field name="arch" type="xml">
+            <form string="Attendance Rule">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="rule_type"/>
+                            <field name="sequence"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group>
+                            <field name="active" widget="boolean_toggle"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <!-- WiFi Tab -->
+                        <page string="WiFi List" invisible="rule_type != 'wifi'">
+                            <field name="wifi_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name" placeholder="Label (optional)"/>
+                                    <field name="ssid" placeholder="e.g. Office-WiFi"/>
+                                    <field name="bssid" placeholder="e.g. AA:BB:CC:DD:EE:FF"/>
+                                </list>
+                            </field>
+                            <div class="alert alert-info mt8" role="status">
+                                <p>• Any one matching WiFi entry will be accepted (OR logic).</p>
+                                <p>• If BSSID is filled, it takes priority over SSID matching.</p>
+                                <p>• WiFi is detected from the server/Kiosk device directly.</p>
+                            </div>
+                        </page>
+
+                        <!-- IP Tab -->
+                        <page string="IP List" invisible="rule_type != 'ip'">
+                            <div class="mb8">
+                                <button
+                                        string="＋ Add My Current IP"
+                                        name="action_add_current_ip"
+                                        type="object"
+                                        class="btn-secondary"/>
+                            </div>
+                            <field name="ip_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name" placeholder="Label (optional)"/>
+                                    <field name="ip_range" placeholder="e.g. 192.168.1.0/24"/>
+                                </list>
+                            </field>
+                            <div class="alert alert-info mt8" role="status">
+                                <p>• Any one matching IP entry will be accepted (OR logic).</p>
+                                <p>• Supports CIDR notation (e.g. 192.168.1.0/24) or a single IP (e.g. 203.0.113.1).</p>
+                                <p>• Click the button above to automatically detect and add your current IP.</p>
+                            </div>
+                        </page>
+
+                        <!-- Geo Tab -->
+                        <page string="Location List" invisible="rule_type != 'geo'">
+                            <div class="mb8">
+                                <widget name="geo_detect_button"/>
+                            </div>
+                            <field name="geo_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name" placeholder="e.g. Head Office"/>
+                                    <field name="latitude"/>
+                                    <field name="longitude"/>
+                                    <field name="radius" string="Radius (m)"/>
+                                </list>
+                            </field>
+                            <div class="alert alert-info mt8" role="status">
+                                <p>• Any one matching location entry will be accepted (OR logic).</p>
+                                <p>• Coordinates can be obtained by right-clicking on Google Maps, or use the button
+                                    above to auto-detect.
+                                </p>
+                                <p>• Radius is in meters. Recommended range: 100–500m.</p>
+                            </div>
+                        </page>
+
+                        <!-- Time Tab -->
+                        <page string="Time Ranges" invisible="rule_type != 'time'">
+                            <field name="time_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name" placeholder="e.g. Morning Check-in"/>
+                                    <field name="attendance_type"/>
+                                    <field name="time_from" widget="float_time"/>
+                                    <field name="time_to" widget="float_time"/>
+                                    <field name="mon"/>
+                                    <field name="tue"/>
+                                    <field name="wed"/>
+                                    <field name="thu"/>
+                                    <field name="fri"/>
+                                    <field name="sat"/>
+                                    <field name="sun"/>
+                                </list>
+                            </field>
+                            <div class="alert alert-info mt8" role="status">
+                                <p>• Any one matching time range will be accepted (OR logic).</p>
+                                <p>• Check-in and Check-out can have separate time ranges.</p>
+                                <p>• Time is based on the company timezone.</p>
+                            </div>
+                        </page>
+                        <!-- Device Tab -->
+                        <page string="Allowed Devices" invisible="rule_type != 'device'">
+                            <field name="device_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name" placeholder="e.g. Office Computer"/>
+                                    <field name="device_type"/>
+                                    <field name="platform" placeholder="e.g. Windows, Android (optional)"/>
+                                    <field name="browser" placeholder="e.g. Chrome, Firefox (optional)"/>
+                                </list>
+                            </field>
+                            <div class="alert alert-info mt8" role="status">
+                                <p>• Any one matching device entry will be accepted (OR logic).</p>
+                                <p>• Platform and Browser matching is case-insensitive and partial (e.g. "Chrome"
+                                    matches "Chrome Mobile").
+                                </p>
+                                <p>• Leave Platform or Browser empty to skip that check.</p>
+                                <p>• Common platforms: Windows, Android, iPhone, iPad, MacOS, Linux.</p>
+                                <p>• Common browsers: Chrome, Firefox, Safari, Edge.</p>
+                            </div>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="attendance_rule_action" model="ir.actions.act_window">
+        <field name="name">Attendance Rules</field>
+        <field name="res_model">attendance.rule</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'active_test': False}</field>
+    </record>
+
+    <menuitem
+            id="attendance_rule_menu"
+            name="Attendance Rules"
+            parent="hr_attendance.menu_hr_attendance_root"
+            action="attendance_rule_action"
+            sequence="20"
+            groups="hr_attendance.group_hr_attendance_manager"/>
+</odoo>

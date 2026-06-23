@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_attendance_rule_manager,attendance.rule manager,model_attendance_rule,hr_attendance.group_hr_attendance_manager,1,1,1,1
+access_attendance_rule_user,attendance.rule user,model_attendance_rule,hr_attendance.group_hr_attendance_user,1,0,0,0
+access_attendance_rule_wifi_manager,attendance.rule.wifi manager,model_attendance_rule_wifi,hr_attendance.group_hr_attendance_manager,1,1,1,1
+access_attendance_rule_wifi_user,attendance.rule.wifi user,model_attendance_rule_wifi,hr_attendance.group_hr_attendance_user,1,0,0,0
+access_attendance_rule_ip_manager,attendance.rule.ip manager,model_attendance_rule_ip,hr_attendance.group_hr_attendance_manager,1,1,1,1
+access_attendance_rule_ip_user,attendance.rule.ip user,model_attendance_rule_ip,hr_attendance.group_hr_attendance_user,1,0,0,0
+access_attendance_rule_geo_manager,attendance.rule.geo manager,model_attendance_rule_geo,hr_attendance.group_hr_attendance_manager,1,1,1,1
+access_attendance_rule_geo_user,attendance.rule.geo user,model_attendance_rule_geo,hr_attendance.group_hr_attendance_user,1,0,0,0
+access_attendance_rule_time_manager,attendance.rule.time manager,model_attendance_rule_time,hr_attendance.group_hr_attendance_manager,1,1,1,1
+access_attendance_rule_time_user,attendance.rule.time user,model_attendance_rule_time,hr_attendance.group_hr_attendance_user,1,0,0,0
+access_attendance_rule_device_manager,attendance.rule.device manager,model_attendance_rule_device,hr_attendance.group_hr_attendance_manager,1,1,1,1
+access_attendance_rule_device_user,attendance.rule.device user,model_attendance_rule_device,hr_attendance.group_hr_attendance_user,1,0,0,0
